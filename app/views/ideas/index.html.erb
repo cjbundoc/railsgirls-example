@@ -1,4 +1,24 @@
-<p id="notice"><%= notice %></p>
+<h1>Contacts</h1>
+<hr>
+<% @ideas.in_groups_of(3) do |group| %>
+  <div class="row" style="margin-left:10px;">
+    <div class="col-md-3">
+      <% group.compact.each do |idea| %>
+        <table>
+          <tr>
+            <td rowspan="2"><%= image_tag idea.picture_url, height: '20px', width: '20px' if idea.picture.present?%></td>
+            <td rowspan="2"><%= image_tag idea.picture_url, height: '20px', width: '20px' if ! idea.picture.present?%></td>
+          </tr>
+          <tr>
+            <td><span><%= link_to idea.name, idea %></span></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Listing Ideas</h1>
 
@@ -29,3 +49,4 @@
 <br>
 
 <%= link_to 'New Idea', new_idea_path %>
+ -->

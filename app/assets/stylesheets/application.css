@@ -14,7 +14,25 @@
  *= require_self
  */
 
-body { padding-top: 100px; }
-footer { margin-top: 100px; }
+body {
+	position:relative;
+	padding-top: 60px;
+	background-color: #c0c0c0; 
+}
+footer { text-align: center; position:relative; z-index:2; bottom:-175px; padding-bottom: 30px;margin-top: 100px; background-color:#fff;}
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
+
+nav .nav {
+	margin-right:0px;
+	float: right;
+}
+@media (max-width: 767px){
+	nav .nav {
+		float: left;
+	}
+}
+
+span, p{
+	font-size: 20px
+}

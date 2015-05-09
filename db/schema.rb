@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509024642) do
+ActiveRecord::Schema.define(version: 20150509075445) do
 
-  create_table "ideas", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "picture"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "comments", force: :cascade do |t|
+    t.string   "cjbundoc"
+    t.text     "body"
+    t.integer  "idea_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+# Could not dump table "ideas" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

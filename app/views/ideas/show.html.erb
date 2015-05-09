@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <table><tr><td>
+    	<%= image_tag(@idea.picture_url, height: '300px') if @idea.picture.present? %>
+    	<%= image_tag(@idea.picture_url, height: '300px') if ! @idea.picture.present? %>
+    </td></tr></table>  
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
-</p>
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+  <div class="col-md-8">
+    <p><b>Name: </b><%= @idea.name %></p>
+    <p><b>Position: </b><%= @idea.position %></p>
+    <p><b>Company: </b><%= @idea.company %></p>
+    <p><b>Home Address: </b><%= @idea.homeaddress %></p>
+    <p><b>Mobile Number: </b><%= @idea.mobilenum %></p>
+    <p><b>Work Address: </b><%= @idea.workaddress %></p>
+    <p><b>Work Number: </b><%= @idea.worknum %></p>
+    <p><b>Email: </b><%= @idea.email %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', ideas_path %>
+    </p>
+  </div>
+</div>

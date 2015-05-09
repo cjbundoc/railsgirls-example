@@ -1,0 +1,29 @@
+
+<h1>Comments and Suggestions</h1>
+<hr>
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comment/Suggestion</th>
+      <th colspan="4">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.cjbundoc %></td>
+        <td><%= comment.body %></td>
+        <td><%= comment.idea_id %></td>
+        <td><%= link_to 'Show', comment %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p id="notice"><%= notice %></p>
